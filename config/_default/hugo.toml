@@ -1,0 +1,46 @@
+baseURL = "https://blog.deltaclock.eu/"
+defaultContentLanguage = "en"
+
+enableRobotsTXT = true
+summaryLength = 0
+
+buildDrafts = false
+buildFuture = false
+
+enableEmoji = true
+
+
+[pagination]
+    disableAliases = false
+    pagerSize = 10
+
+[imaging]
+    anchor = "Center"
+
+[taxonomies]
+    topic = "topics"
+
+[sitemap]
+    changefreq = "weekly"
+    priority = 0.5
+
+[outputs]
+    home = ["HTML", "RSS", "JSON"]
+
+[related]
+    threshold = 0
+    toLower = false
+
+[[related.indices]]
+    name = "topics"
+    weight = 100
+
+[[related.indices]]
+    name = "date"
+    weight = 10
+
+[[related.indices]]
+    applyFilter = false
+    name = "fragmentrefs"
+    type = "fragments"
+    weight = 10

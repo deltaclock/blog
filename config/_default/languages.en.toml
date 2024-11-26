@@ -1,0 +1,30 @@
+disabled = false
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Nikolaos Mourousias"
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "2 January 2006"
+logo = "author.png"
+# secondaryLogo = "img/secondary-logo.png"
+description = "deltaclock's security blog"
+copyright = "🄯 deltaclock { year }"
+
+[params.author]
+name = "Nikolaos Mourousias"
+email = "blog@deltaclock.eu"
+image = "author.png"
+imageQuality = 100
+headline = "_Security Researcher_"
+bio = "_Security Researcher_"
+links = [
+  { linkedin = "https://www.linkedin.com/in/nikolaos-m-66bba3210/" },
+  { github = "https://github.com/deltaclock" },
+  { x-twitter = "https://x.com/deltaclock" },
+  { ctftime = "https://ctftime.org/user/74062" },
+  { discord = "https://discordapp.com/users/436069581665075200" },
+]

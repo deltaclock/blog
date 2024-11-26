@@ -1,0 +1,111 @@
+# -- Theme Options --
+# These options control how the theme functions and allow you to
+# customise the display of your website.
+#
+# Refer to the theme docs for more details about each of these parameters.
+# https://blowfish.page/docs/configuration/#theme-parameters
+
+colorScheme = "congo"
+defaultAppearance = "dark"
+autoSwitchAppearance = true
+
+enableSearch = true
+enableCodeCopy = true
+
+replyByEmail = false
+
+mainSections = ["posts"]
+robots = ""              # TODO: SEO ?
+
+disableImageZoom = false
+disableImageOptimization = false
+backgroundImageWidth = 1200
+disableTextInHeader = false
+
+defaultBackgroundImage = "background.png"
+#defaultFeaturedImage = "abstract.jpg"
+
+highlightCurrentMenuArea = true
+smartTOC = true
+smartTOCHideUnfocusedChildren = true
+
+[header]
+  layout = "fixed-gradient"
+
+[footer]
+  showMenu = true
+  showCopyright = true
+  showThemeAttribution = true
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+[homepage]
+  layout = "background"
+  #homepageImage = "IMAGE.jpg" # used in: hero, and card
+  showRecent = true
+  showRecentItems = 5
+  showMoreLink = true
+  showMoreLinkDest = "/posts/"
+  cardView = true
+  cardViewScreenWidth = false
+  layoutBackgroundBlur = true  # only used when layout equals background
+
+[article]
+  showDate = true
+  showDateOnlyInArticle = false
+  showDateUpdated = true
+  showAuthor = true
+  showAuthorBottom = true
+  showHero = true
+  heroStyle = "thumbAndBackground"
+  layoutBackgroundBlur = true
+  layoutBackgroundHeaderSpace = true
+  showBreadcrumbs = true
+  showDraftLabel = true
+  showEdit = true
+  editURL = "https://github.com/deltaclock/blog.deltaclock.eu/content/"
+  editAppendPath = true
+  seriesOpened = false
+  showHeadingAnchors = true
+  showPagination = true
+  invertPagination = false
+  showReadingTime = true
+  showTableOfContents = true
+  # showRelatedContent = true
+  # relatedContentLimit = 3
+  showTaxonomies = true
+  showAuthorsBadges = false
+  showWordCount = true
+  sharingLinks = ["bluesky", "twitter", "mastodon", "linkedin"]
+  showZenMode = true
+
+[list]
+  showHero = true
+  heroStyle = "background"
+  layoutBackgroundBlur = true
+  layoutBackgroundHeaderSpace = false
+  showBreadcrumbs = true
+  showTableOfContents = false
+  showSummary = true
+  showCards = false
+  orderByWeight = false
+  groupByYear = true
+  cardView = false
+  cardViewScreenWidth = false
+  constrainItemsWidth = false
+
+[taxonomy]
+  showTermCount = true
+  showHero = true
+  heroStyle = "background"
+  showBreadcrumbs = true
+  showTableOfContents = false
+  cardView = false
+
+[term]
+  showHero = true
+  heroStyle = "background"
+  showBreadcrumbs = true
+  groupByYear = false
+  cardView = false
+  cardViewScreenWidth = false
