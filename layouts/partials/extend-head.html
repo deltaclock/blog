@@ -1,7 +1,13 @@
-<link id="delta_css" rel="stylesheet" href="data:text/css,.min-h-%5C%5B148px%5C%5D%20%7B%0A%20%20%20%20min-height:%208%25;%0A%7D" disabled>
+{{ with resources.Get "css/home.css"  | resources.Fingerprint "sha512" }}
+<link id="home_css" rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" disabled>
+{{ end }}
+{{ with resources.Get "css/about.css"  | resources.Fingerprint "sha512" }}
+<link id="about_css" rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" disabled>
+{{ end }}
 <script>
-    const url = location.pathname;
-    if (url === "/") {
-        document.getElementById("delta_css").disabled = false;
+    const path_to_id = {
+        "/": "home_css",
+        "/about/": "about_css",
     }
+    document.getElementById(path_to_id[location.pathname]).disabled = false;
 </script>

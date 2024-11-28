@@ -3,6 +3,7 @@ defaultContentLanguage = "en"
 
 enableRobotsTXT = true
 summaryLength = 0
+cleanDestinationDir = true
 
 buildDrafts = false
 buildFuture = false
