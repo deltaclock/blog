@@ -18,7 +18,7 @@ enableEmoji = true
     anchor = "Center"
 
 [taxonomies]
-    topic = "topics"
+    tag = "tags"
 
 [sitemap]
     changefreq = "weekly"
@@ -32,7 +32,7 @@ enableEmoji = true
     toLower = false
 
 [[related.indices]]
-    name = "topics"
+    name = "tags"
     weight = 100
 
 [[related.indices]]
