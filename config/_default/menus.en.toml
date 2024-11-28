@@ -24,7 +24,7 @@ weight = 20
 [[main]]
 name = "CVEs"
 title = "All CVEs"
-pageRef = "cves"
+pageRef = "tags/cve"
 weight = 30
 
 [[main]]

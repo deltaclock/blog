@@ -3,11 +3,11 @@ title: "Markdown"
 date: 2024-03-11
 description: "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 summary: "lol summary gfgfdgfdgfdgfdgdfgfd."
-tags: ["markdown", "css", "html", "sample"]
+tags: ["markdown", "css", "html", "CVE"]
 ---
 
 
-## Headings
+# Headings
 
 The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
 

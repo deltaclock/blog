@@ -9,5 +9,5 @@
         "/": "home_css",
         "/about/": "about_css",
     }
-    document.getElementById(path_to_id[location.pathname]).disabled = false;
+    path_to_id[location.pathname] && (document.getElementById(path_to_id[location.pathname]).disabled = false);
 </script>

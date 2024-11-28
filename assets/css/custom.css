@@ -84,6 +84,11 @@
 /* GenericTraceback */ .chroma-custom .gt {  }
 /* GenericUnderline */ .chroma-custom .gl { text-decoration:underline }
 /* TextWhitespace */ .chroma-custom .w {  }
-.max-w-prose { 
+.max-w-prose {
     max-width: 100%;
+}
+/* TODO: Make sure it doesn't affect other elements */
+.lead {
+    --tw-text-opacity: 1;
+    color: rgba(var(--color-neutral-300), var(--tw-text-opacity)) !important;
 }

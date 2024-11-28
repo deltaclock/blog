@@ -10,6 +10,8 @@ buildFuture = false
 
 enableEmoji = true
 
+titleCaseStyle = "none"
+
 
 [pagination]
     disableAliases = false
