@@ -1,0 +1,22 @@
+<script>
+    // set data-href to all a elements
+    for (const a of document.getElementsByTagName("a")) {
+        a.dataset.href = a.attributes.href.nodeValue;
+    }
+
+    const open_regex = new RegExp(`"(.+)"`);
+
+    for (const span of document.querySelectorAll('span[onclick]')) {
+        let open_url = open_regex.exec(span.attributes.onclick.nodeValue)[1];
+
+        span.setAttribute("title", open_url);
+        span.addEventListener("mouseover", (e) => {
+            const article_node = e.target.closest("a");
+            article_node.href = open_url;
+        });
+        span.addEventListener("mouseout", (e) => {
+            const article_node = e.target.closest("a");
+            article_node.href = article_node.dataset.href;
+        });
+    }
+</script>
