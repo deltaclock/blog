@@ -1,3 +1,8 @@
+{{ with .Params.defaultBackgroundImage }}
+    {{ with resources.Get . }}
+<link rel="preload" as="image" href="{{ .RelPermalink }}">
+    {{ end }}
+{{ end }}
 {{ with resources.Get "css/home.css"  | resources.Fingerprint "sha512" }}
 <link id="home_css" rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" disabled>
 {{ end }}
