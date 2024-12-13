@@ -3,6 +3,9 @@
 <link rel="preload" as="image" href="{{ .RelPermalink }}">
     {{ end }}
 {{ end }}
+<link rel="preload" as="image" href="./featured.jpg">
+<link rel="preload" as="image" href="./featured.png">
+
 {{ with resources.Get "css/home.css"  | resources.Fingerprint "sha512" }}
 <link id="home_css" rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" disabled>
 {{ end }}

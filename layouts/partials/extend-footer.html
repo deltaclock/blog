@@ -19,4 +19,22 @@
             article_node.href = article_node.dataset.href;
         });
     }
+
+    // resize featured div box when the text changes
+    const article_text = document.querySelector("section > div:nth-child(2)");
+    const featured_div = document.querySelector(".single_hero_basic");
+
+    if (article_text) {
+        new ResizeObserver((entries) => {
+            for (const entry of entries) {
+                // get element before paint
+                const new_elem = entry?.contentBoxSize?.[0];
+                if (new_elem) {
+                    featured_div.style.width = `${new_elem.inlineSize}px`;
+                }
+            }
+        }).observe(article_text);
+    }
+
+
 </script>

@@ -18,7 +18,7 @@ mainSections = ["posts"]
 robots = ""              # TODO: SEO ?
 
 disableImageZoom = false
-disableImageOptimization = false
+disableImageOptimization = true
 backgroundImageWidth = 1200
 disableTextInHeader = false
 
@@ -91,7 +91,7 @@ smartTOCHideUnfocusedChildren = true
   orderByWeight = false
   groupByYear = true
   cardView = false
-  cardViewScreenWidth = true
+  cardViewScreenWidth = false
   constrainItemsWidth = false
 
 [taxonomy]
