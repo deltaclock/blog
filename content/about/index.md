@@ -1,7 +1,7 @@
 +++
 date = '2024-11-28T15:57:11+02:00'
-draft = true
-title = 'About'
+draft = false
+title = 'About me'
 showEdit = false
 sharingLinks = false
 showAuthor = false
@@ -17,15 +17,16 @@ layoutBackgroundHeaderSpace = false
 layoutBackgroundBlur = true
 +++
 
-# some text
+<br/>
 
-fgfgf
+***
 
-## 2121
+Hello! My name is **Nikolaos Mourousias**, and I work as a Security Researcher. I have extensive knowledge and experience in **Web** and **Mobile** security. Frequently, I also rely on my reverse engineering or binary exploitation skills to achieve my objectives.
 
-sddsdsd
+The goal of this blog is to share knowledge on rarely explored topics and provide up-to-date insights into past techniques. Moreover, it serves as a repository for all my published security research, advisories on various systems or CTF writeups.
 
-### gfgfgf
+In my free time, I enjoy tinkering with anything IT-related and, of course, playing CTFs with my team, [Zer0Tolerance](https://x.com/0tolerance_ctf).
 
+You can contact me at deltaclock (@) protonmail.com
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+***
