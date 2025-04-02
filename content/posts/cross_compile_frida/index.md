@@ -8,13 +8,13 @@ tags = ["frida"]
 +++
 
 
-During my recent personal research, I came across an embedded device running a custom Linux-based system. One of my goals when evaluating it's security, was to programmatically monitor the system's processes and hook various custom libraries for logging their actions.
+During my recent personal research, I came across an embedded device running a custom Linux-based system. One of my goals, when evaluating its security, was to programmatically monitor the system's processes and hook various custom libraries for logging their actions.
 
 # Objective
 
-Through my preceding research I have identified a target library (`target.so`) that was being referenced by various other ELFs. Some of these processes were already running, while others, could be invoked by dynamic events or run periodically at unknown intervals.
+Through my preceding research, I have identified a target library (`target.so`) that was being referenced by various other ELFs. Some of these processes were already running, while others could be invoked by dynamic events or run periodically at unknown intervals.
 
-Since the function I wanted to hook was pretty simple, one of my early ideas was to just modify `/etc/ld.so.preload` to include my _hook_ shared library to all future processes. This turned out to be problematic as most of the system's partitions were _read-only_, enforced at the hardware level. Of course, this big limitation also prevented me from setting any additional environment variables like `LD_PRELOAD`.
+Since the function I wanted to hook was pretty simple, one of my early ideas was to just modify `/etc/ld.so.preload` to include my _hook_ shared library in all future processes. This turned out to be problematic as most of the system's partitions were _read-only_, enforced at the hardware level. Of course, this big limitation also prevented me from setting any additional environment variables like `LD_PRELOAD`.
 
 # Enter Frida
 
@@ -25,7 +25,7 @@ At the same time, this was also the point where many major frustrations arose.
 
 ## The problems
 
-Even though my target's device CPU supported the hard-float ABI (`armhf`), the system's developers opted to compile all binaries in soft-float ABI (`armel`). This might seem like an obvious point of caution to people, more experienced with embedded systems, but personally, apart from maybe size constrains, it doesn't make much sense.
+Even though my target's device CPU supported the hard-float ABI (`armhf`), the system's developers opted to compile all binaries in soft-float ABI (`armel`). This might seem like an obvious point of caution to people more experienced with embedded systems, but personally, apart from maybe size constraints, it doesn't make much sense.
 
 When I first gained a root shell on the device, I checked to see exactly what kind of system I'm dealing with. One of my data points was the CPU model or supported features.
 
@@ -42,7 +42,7 @@ CPU part        : 0xc07
 CPU revision    : 5
 ```
 
-As we can see, the CPU clearly supports `armhf`. As a result, for _simpler_ tools like [dropbear](https://github.com/mkj/dropbear) or [gdbserver](https://sourceware.org/pub/gdb/releases/), choosing a [musl](https://musl.libc.org/)-based cross compiler with `armhf` support and statically compiling, proved sufficient.
+As we can see, the CPU clearly supports `armhf`. As a result, for _simpler_ tools like [dropbear](https://github.com/mkj/dropbear) or [gdbserver](https://sourceware.org/pub/gdb/releases/), choosing a [musl](https://musl.libc.org/)-based cross-compiler with `armhf` support and statically compiling, proved sufficient.
 
 > One such compiler is conveniently provided by Void Linux: https://pkgs.org/search/?q=musleabihf
 
@@ -50,18 +50,18 @@ As we can see, the CPU clearly supports `armhf`. As a result, for _simpler_ tool
 
 Unfortunately, running a _frida server_ on the device wasn't as simple.
 
-During my initial attempts, I thought I could just download the precompiled _frida-server-armhf_ variant from Github and proceed with my hooking efforts.
+During my initial attempts, I thought I could just download the precompiled _frida-server-armhf_ variant from GitHub and proceed with my hooking efforts.
 The binary could run on the target, after replacing the interpreter path with the correct `ld` path found on the device.
 
 ```sh
 patchelf --set-interpreter /lib/ld-linux.so.3 frida-server-16.6.6-linux-armhf
 ```
 
-The screenshot below depicts the subsequent problems encountered. Despite _frida-server_ successfully starting and able to communicate with a frida client, it was <u>unable</u> to actually attach to any processes, throwing the error _«Failed to attach: unable to load library»_.
+The screenshot below depicts the subsequent problems encountered. Despite _frida-server_ successfully starting and being able to communicate with a Frida client, it was <u>unable</u> to actually attach to any processes, throwing the error _«Failed to attach: unable to load library»_.
 
 {{< figure src="images/frida_error.png" alt="Frida attach error." caption="Frida attach error emitted by [loader.c](https://github.com/frida/frida-core/blob/2ebec1addff5e0bc908a7f0a5979dd86452b05b8/src/linux/helpers/loader.c#L150)" >}}
 
-Analyzing frida's loader, we can see this error message is emitted when _frida-server_ fails to dynamically load the _friga-agent_ shared object.
+Analyzing Frida's loader, we can see this error message is emitted when _frida-server_ fails to dynamically load the _friga-agent_ shared object.
 The root cause of the `libc->dlopen` failure stems from the inability of the dynamic loader (`ld`) to load a hard-float ABI object, as mentioned previously.
 
 {{< codeimporter url="https://raw.githubusercontent.com/frida/frida-core/2ebec1addff5e0bc908a7f0a5979dd86452b05b8/src/linux/helpers/loader.c" type="c" startLine="116" endLine="129" >}}
@@ -70,7 +70,7 @@ The root cause of the `libc->dlopen` failure stems from the inability of the dyn
 
 # Compiling Frida
 
-While probably other tricks exist, to avoid compiling the whole project, it's safer to assume a compilation will have higher changes of success than anything else.
+While probably other tricks exist, to avoid compiling the whole project, it's safer to assume a compilation will have higher chances of success than anything else.
 
 In order to compile such a project on my _x86-64_ PC, I required a toolchain that:
 
@@ -84,7 +84,7 @@ For my use case, I discovered two methods that both resulted in a fully capable 
 
 ## Correct way: Crosstool-NG
 
-The reason why I've labeled this as the _correct_ way, stems from the ability of [crosstool-NG](https://crosstool-ng.github.io/docs/introduction/) to build toolchains for almost any kind of system configuration. Despite this, I avoided this method when I was rushing to get something running, due to my unfamiliarly with the project.\
+The reason I've labeled this as the _correct_ way, stems from the ability of [crosstool-NG](https://crosstool-ng.github.io/docs/introduction/) to build toolchains for almost any kind of system configuration. Despite this, I avoided this method when I was rushing to get something running, due to my unfamiliarity with the project.\
 After I achieved my research goals, I revisited the project and took some time to build Frida using it.
 
 Due to Frida requiring Node as a build dependency, I've chosen to run all subsequent compilation steps in a Docker container, using as base the `node:18` image.
@@ -93,7 +93,7 @@ Due to Frida requiring Node as a build dependency, I've chosen to run all subseq
 
 Having installed _crosstool-NG_ in the container, we need to configure our toolchain.
 
-As a safe starting point, I've chosen the `arm-unknown-linux-gnueabi` template. Below we can see the default configuration of this template, which we will need to tweak to match our needs.
+As a safe starting point, I've chosen the `arm-unknown-linux-gnueabi` template. Below, we can see the default configuration of this template, which we will need to tweak to match our needs.
 
 ```sh
 root@dad2bad6b3a5:/crosstool# ct-ng show-arm-unknown-linux-gnueabi
@@ -128,26 +128,26 @@ Finally, all we have to do is add the toolchain into our `PATH` and follow the i
 This can be summed up in 3 steps:
 
 1) Clone https://github.com/frida/frida.git in a folder.
-2) Run `./configure` script specifying the components to enable/disable and the _suffix_ of our cross compiler under the `--host=` switch.
+2) Run the `./configure` script specifying the components to enable/disable and the _suffix_ of our cross-compiler under the `--host=` switch.
 3) Compile everything into a single binary with `make`.
 
 #### More frustrations
 
 > While I wish I wouldn't have to write this section, it may be useful in case anyone else faces these problems in the future.
 
-Remember earlier, I've chosen for my toolchain the latest version of GCC compiler 14.2. Turns out, with every GCC release greater than version 6, the resulting `frida-server` binary depended on the `libatomic.so` library which didn't exist on my embedded device.
+Remember earlier, I've chosen for my toolchain the latest version of GCC compiler 14.2. Turns out, with every GCC release greater than version 6, the resulting `frida-server` binary depended on the `libatomic.so` library, which didn't exist on my embedded device.
 
-This library requirement presumably originated from the [openssl](https://github.com/frida/openssl) dependency of Frida. Reading the [code](https://github.com/frida/openssl/blob/ca4781aaf7910b623d3ae21c6a017e7e9ca6936c/include/internal/tsan_assist.h#L51) responsible for adding support for atomic operations, let me to believe that defining the preprocessor variable `__STDC_NO_ATOMICS__` would make _openssl_ fallback to using locks, removing the `libatomic` requirement albeit making the code somewhat slower.
+This library requirement presumably originated from the [openssl](https://github.com/frida/openssl) dependency of Frida. Reading the [code](https://github.com/frida/openssl/blob/ca4781aaf7910b623d3ae21c6a017e7e9ca6936c/include/internal/tsan_assist.h#L51) responsible for adding support for atomic operations, let me to believe that defining the preprocessor variable `__STDC_NO_ATOMICS__` would make _openssl_ fallback to using locks, removing the `libatomic` requirement, albeit making the code somewhat slower.
 
 > The only way I've found to add a preprocessor variable, without patching Frida's build scripts, was to append meson options to the `./configure` script. Environment variables like `CFLAGS` or `CXXFLAGS` weren't picked up.\
 > Example: `./configure --switch1 --switch2 -- -Dc_args="-D__STDC_NO_ATOMICS__=1"`
 
-Unfortunately, this wasn't enough, while I could see `__STDC_NO_ATOMICS__` being defined in openssl's compilation command line, the resulting ELF **still** depended on `libatomic`. To overcome this problem, I decided to use GCC version 6, the same GCC version that the `libc` found on my target device was compiled with.
+Unfortunately, this wasn't enough; while I could see `__STDC_NO_ATOMICS__` being defined in openssl's compilation command line, the resulting ELF **still** depended on `libatomic`. To overcome this problem, I decided to use GCC version 6, the same GCC version that the `libc` found on my target device was compiled with.
 
 ### Crosstool-NG - Dockerfile
 
 The following `Dockerfile` includes all previously described steps for compiling a `frida-server` for my target device.\
-Running the command `docker build -o . .` should save a `frida-server` in the current directory.
+Running the command `docker build -o . .` should save a `frida-server` binary in the current directory.
 
 ```Dockerfile
 FROM node:18 AS builder
@@ -217,15 +217,15 @@ COPY --from=builder /build/frida/build/subprojects/frida-core/server/frida-serve
 
 ## Hacky way: Debian
 
-As mentioned perviously, during my research _rush_, I didn't have the time to fully investigate _crosstool-ng_. I needed something that could help me get Frida compiled and running on the device, as fast as possible. The idea was to think like the system's developers, meaning the combination of glibc and GCC versions, would probably **not** be something very _exotic_.
+As mentioned previously, during my research _rush_, I didn't have the time to fully investigate _crosstool-ng_. I needed something that could help me get Frida compiled and running on the device as fast as possible. The idea was to think like the system's developers, meaning the combination of glibc and GCC versions, would probably **not** be something very _exotic_.
 
-A quick search on the awesome website https://pkgs.org, [revealed](https://pkgs.org/search/?q=armel#) that indeed the _biggest_ Linux distributions offered pre-built `armel` compilers, the only problem was their included glibc version.
+A quick search on the awesome website https://pkgs.org, [revealed](https://pkgs.org/search/?q=armel#) that indeed the _biggest_ Linux distributions offered pre-built `armel` compilers; the only problem was their included glibc version.
 
 Taking a look at Debian's package search results for `libc6-armel-cross`, we can see that Debian _buster_ offers glibc version 2.28, close but not exactly my target's 2.24.
 
 {{< figure src="images/debian_pkgs.png" alt="Debian libc6-armel-cross package search." caption="Debian [libc6-armel-cross](https://packages.debian.org/search?keywords=libc6-armel-cross&searchon=names&suite=all&section=all) package search results." >}}
 
-I needed to go, hopefully, one version before to Debian _stretch_. The only reliable source for versioning of such old packages I found to be https://distrowatch.com.
+I needed to pick, hopefully, one version before Debian _stretch_. The only reliable source of versioning for such old packages I found to be https://distrowatch.com.
 
 Loading the full package list from distrowatch's page, allowed me to confirm my hypothesis! Debian _stretch_ contained exactly the package I was looking for!
 
@@ -235,9 +235,9 @@ Loading the full package list from distrowatch's page, allowed me to confirm my 
 
 The only thing left to do now, is to force install such old packages into the much newer Debian _bookworm_ that `node:18` is based upon.
 
-One way to solve this problem, was to download these very old packages (along with their dependencies) from `debian:stretch` and _force install_ them onto the `node:18` container. This is essentially based on the fact that programs built for older glibc should be able to run on newer glibc versions, following glibc backward-compatible guarantees.
+One way to solve this problem, was to download these very old packages (along with their dependencies) from `debian:stretch` and _force install_ them onto the `node:18` container. This is essentially based on the fact that programs built for older glibc versions should be able to run on newer glibc versions, following glibc backward-compatible guarantees.
 
-This added the `arm-linux-gnueabi-*` family of tools and libraries in the standard system paths, as if they were installed with `apt`.
+This forceful installation added the `arm-linux-gnueabi-*` family of tools and libraries in the standard system paths, as if they were installed with `apt`.
 
 The build process remains largely the same as before, with the only minor difference being that a plain `./configure` didn't work for this case. Again, more _openssl_ errors were generated, but these were quickly avoided by using `./releng/deps.py build` before retrying to configure the project.
 
@@ -277,7 +277,7 @@ COPY --from=builder /build/frida/build/subprojects/frida-core/server/frida-serve
 
 # Conclusions
 
-Frida is a very powerful tool and it's unfortunate there aren't many available blogs for using it outside of mobile applications.
+Frida is a very powerful tool, and it's unfortunate there aren't many available blogs for using it beyond mobile applications.
 I hope this article can help people, in similar situations, solve their Frida compilation problems.
 
 > All the build processes and Dockerfiles, have been last tested and confirmed to be working as of March 2025.
