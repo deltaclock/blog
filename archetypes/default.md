@@ -16,4 +16,5 @@ showZenMode = false
 showTableOfContents = false
 layoutBackgroundHeaderSpace = false
 layoutBackgroundBlur = true
+showPagination = false
 +++

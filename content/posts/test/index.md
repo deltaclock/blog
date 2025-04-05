@@ -3,7 +3,7 @@ title: "Markdown"
 date: 2024-03-11
 description: "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 summary: "lol summary gfgfdgfdgfdgfdgdfgfd."
-tags: ["markdown", "css", "html", "CVE"]
+tags: ["markdown", "css", "html"]
 draft: true
 ---
 

@@ -3,7 +3,7 @@ date = "2024-12-10T18:11:41+02:00"
 title = "Frida cross compilation"
 description = "Insights on compiling Frida for foreign architectures such as armel."
 summary = "Insights on compiling Frida for foreign architectures such as armel."
-tags = ["frida"]
+tags = ["Frida"]
 +++
 
 

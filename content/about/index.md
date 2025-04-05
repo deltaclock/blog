@@ -15,9 +15,8 @@ showZenMode = false
 showTableOfContents = false
 layoutBackgroundHeaderSpace = false
 layoutBackgroundBlur = true
+showPagination = false
 +++
-
-<br/>
 
 ***
 
@@ -27,6 +26,6 @@ The goal of this blog is to share knowledge on rarely explored topics and provid
 
 In my free time, I enjoy tinkering with anything IT-related and, of course, playing CTFs with my team, [Zer0Tolerance](https://x.com/0tolerance_ctf).
 
-You can contact me at deltaclock (@) protonmail.com
+You can contact me at deltaclock [@] protonmail.com
 
 ***
