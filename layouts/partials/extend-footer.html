@@ -6,7 +6,7 @@
 
     const open_regex = new RegExp(`"(.+)"`);
 
-    for (const span of document.querySelectorAll('span[onclick]')) {
+    for (const span of document.querySelectorAll("span[onclick]")) {
         let open_url = open_regex.exec(span.attributes.onclick.nodeValue)[1];
 
         span.setAttribute("title", open_url);
@@ -35,6 +35,19 @@
             }
         }).observe(article_text);
     }
+
+    // my own scroll blurring
+    const BLUR_DIV = document.querySelector("#background-blur");
+    const MENU = document.getElementById("menu-blur");
+    const DEFAULT_OPACITY = parseFloat(getComputedStyle(BLUR_DIV).opacity);
+
+    window.addEventListener("scroll", function (event) {
+        const scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        const new_opacity = Math.min(1, Math.max(DEFAULT_OPACITY, DEFAULT_OPACITY + (scroll / 1000)));
+        BLUR_DIV.style.opacity = new_opacity;
+        MENU.style.opacity = new_opacity;
+        event.stopImmediatePropagation();
+    }, { capture: true });
 
 
 </script>

@@ -410,30 +410,6 @@
 /* TextWhitespace */
 .chroma-custom .w {}
 
-.max-w-prose {
-    max-width: 100%;
-}
-
-/* TODO: Make sure it doesn't affect other elements */
-.lead {
-    --tw-text-opacity: 1;
-    color: rgba(var(--color-neutral-300), var(--tw-text-opacity)) !important;
-}
-
-.single_hero_basic {
-    background-size: contain;
-    background-color: rgba(0, 0, 0, 50%);
-}
-
-.thumbnail_card {
-    background-size: 100%;
-    background-color: rgba(0, 0, 0, 25%);
-}
-
-.thumbnail {
-    background-size: 100%;
-    background-color: rgba(0, 0, 0, 25%);
-}
 
 /* latin-ext */
 @font-face {
@@ -486,4 +462,36 @@ html {
     font-optical-sizing: auto;
     font-weight: 400;
     line-height: 1.2;
+}
+
+/* gets the post top image max width, just before the TOC */
+.max-w-prose {
+    max-width: 100%;
+}
+
+/* TODO: Make sure it doesn't affect other elements */
+/* .lead {
+    --tw-text-opacity: 1;
+    color: rgba(var(--color-neutral-300), var(--tw-text-opacity)) !important;
+} */
+
+.single_hero_basic {
+    background-size: contain;
+    /* background-color: rgba(0, 0, 0, 50%); */
+}
+
+.thumbnail_card {
+    background-size: 100%;
+    background-color: rgba(0, 0, 0, 25%);
+}
+
+.thumbnail {
+    background-size: 100%;
+    background-color: rgba(0, 0, 0, 25%);
+}
+
+/* TODO: I like the bg color, but scroll fucks it up? */
+#background-blur {
+    opacity: 0.6;
+    background-color: rgba(0, 0, 0, 24%);
 }
