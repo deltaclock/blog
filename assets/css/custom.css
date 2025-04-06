@@ -469,11 +469,11 @@ html {
     max-width: 100%;
 }
 
-/* TODO: Make sure it doesn't affect other elements */
-/* .lead {
+/* make lead white-looking */
+.lead {
     --tw-text-opacity: 1;
     color: rgba(var(--color-neutral-300), var(--tw-text-opacity)) !important;
-} */
+}
 
 .single_hero_basic {
     background-size: 80%;

@@ -39,13 +39,13 @@
     // my own scroll blurring
     const BLUR_DIV = document.querySelector("#background-blur");
     const MENU = document.getElementById("menu-blur");
-    const DEFAULT_OPACITY = parseFloat(getComputedStyle(BLUR_DIV).opacity);
+    const BG_DEFAULT_OPACITY = parseFloat(getComputedStyle(BLUR_DIV).opacity);
+    const MN_DEFAULT_OPACITY = parseFloat(getComputedStyle(MENU).opacity);
 
     window.addEventListener("scroll", function (event) {
         const scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-        const new_opacity = Math.min(1, Math.max(DEFAULT_OPACITY, DEFAULT_OPACITY + (scroll / 1000)));
-        BLUR_DIV.style.opacity = new_opacity;
-        MENU.style.opacity = new_opacity;
+        BLUR_DIV.style.opacity = Math.min(1, Math.max(BG_DEFAULT_OPACITY, BG_DEFAULT_OPACITY + (scroll / 1000)));
+        MENU.style.opacity = Math.min(1, Math.max(MN_DEFAULT_OPACITY, MN_DEFAULT_OPACITY + (scroll / 300)));
         event.stopImmediatePropagation();
     }, { capture: true });
 
