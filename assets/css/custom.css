@@ -476,21 +476,22 @@ html {
 } */
 
 .single_hero_basic {
-    background-size: contain;
+    background-size: 80%;
+    background-position: left;
     /* background-color: rgba(0, 0, 0, 50%); */
 }
 
 .thumbnail_card {
-    background-size: 100%;
-    background-color: rgba(0, 0, 0, 25%);
+    background-size: 90%;
+    background-color: rgba(0, 0, 0, 10%);
 }
 
 .thumbnail {
     background-size: 100%;
-    background-color: rgba(0, 0, 0, 25%);
+    background-color: rgba(0, 0, 0, 35%);
 }
 
-/* TODO: I like the bg color, but scroll fucks it up? */
+
 #background-blur {
     opacity: 0.6;
     background-color: rgba(0, 0, 0, 24%);
