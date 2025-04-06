@@ -280,26 +280,3 @@ Frida is a very powerful tool, and it's unfortunate there aren't many available 
 I hope this article can help people, in similar situations, solve their Frida compilation problems.
 
 > All the build processes and Dockerfiles, have been last tested and confirmed to be working as of March 2025.
-
-```c
-module_load (struct nss_module *module)
-{
-  if (strcmp (module->name, "files") == 0)
-    return module_load_nss_files (module);
-  if (strcmp (module->name, "dns") == 0)
-    return module_load_nss_dns (module);
-
-  void *handle;
-  {
-    char *shlib_name;
-    if (__asprintf (&shlib_name, "libnss_%s.so%s",
-                    module->name, __nss_shlib_revision) < 0)
-      /* This is definitely a temporary failure.  Do not update
-         module->state.  This will trigger another attempt at the next
-         call.  */
-      return false;
-
-    handle = __libc_dlopen (shlib_name); //our job is done if __libc_dlopen succeeds
-  }
-}
-```
