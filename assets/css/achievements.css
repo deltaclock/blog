@@ -1,0 +1,15 @@
+#background-blur {
+    opacity: 0.90;
+}
+
+li>div>div:last-child {
+    --tw-shadow-color: rgb(0 0 0 / 0.95);
+}
+
+.h-8 {
+    height: calc(var(--spacing) * 8.2);
+}
+
+.min-w-\[30px\] {
+    min-width: 32px;
+}
