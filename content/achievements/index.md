@@ -39,12 +39,13 @@ A collection of various CTF achievements, either personal or collectively, as pa
   <li>🏆 1st place with Team Europe 🇪🇺 @ <a href="https://icc.ecsc.eu/" target="_blank" rel="noopener noreferrer">International Cybersecurity Challenge</a> in 🇨🇱</li>
   <li>🇬🇷 Team Greece captain @ <a href="https://ecsc.eu/past-editions/2024" target="_blank" rel="noopener noreferrer">European Cybersecurity Challenge</a> in 🇮🇹</li>
   <li>🏴 5th place @ <a href="https://ctftime.org/event/2440" target="_blank" rel="noopener noreferrer">m0leCon CTF Teaser</a></li>
-  <li>🥉 3rd place @ <a href="https://ctftime.org/event/2296" target="_blank" rel="noopener noreferrer">Google Capture The Flag 2024</a></li>
-  <li>🏴 7th place @ <a href="https://ctftime.org/event/2246" target="_blank" rel="noopener noreferrer">LakeCTF Finals</a> in 🇨🇭</li>
-  <li>🏴‍☠️ 13th place @ <a href="https://ctftime.org/event/2229" target="_blank" rel="noopener noreferrer">DEF CON CTF Qualifier 2024</a></li>
-  <li>🇪🇺 6th place @ <a href="https://teameurope.site/" target="_blank" rel="noopener noreferrer">Team Europe Qualifiers 2024</a></li>
-  <li>🏴 7th place @ <a href="https://ctftime.org/event/2342" target="_blank" rel="noopener noreferrer">justCTF 2024 teaser</a></li>
   <li>🥉 3rd place @ <a href="https://ctftime.org/event/2412" target="_blank" rel="noopener noreferrer">ENOWARS 8</a></li>
+  <li>🥉 3rd place @ <a href="https://ctftime.org/event/2296" target="_blank" rel="noopener noreferrer">Google Capture The Flag 2024</a></li>
+  <li>🏴 7th place @ <a href="https://ctftime.org/event/2342" target="_blank" rel="noopener noreferrer">justCTF 2024 teaser</a></li>
+  <li>🇪🇺 6th place @ <a href="https://teameurope.site/" target="_blank" rel="noopener noreferrer">Team Europe Qualifiers 2024</a></li>
+  <li>🏴‍☠️ 13th place @ <a href="https://ctftime.org/event/2229" target="_blank" rel="noopener noreferrer">DEF CON CTF Qualifier 2024</a></li>
+  <li>🏴 7th place @ <a href="https://ctftime.org/event/2246" target="_blank" rel="noopener noreferrer">LakeCTF Finals</a> in 🇨🇭</li>
+  <li>🥇 1st place @ <a href="https://github.com/CyberSecurity-Challenge-Greece/write-ups/blob/48ac3a64be7378eed3d490bd6e5a8a0d31cc6cfb/README.md" target="_blank" rel="noopener noreferrer">Cyber Security Challenge Greece 2024</a> by NVISO</li>
   <li>🏴 4th place @ <a href="https://ctftime.org/event/2302" target="_blank" rel="noopener noreferrer">UTCTF 2024</a></li>
 </ul>
 {{< /timelineItem >}}
@@ -90,6 +91,7 @@ A collection of various CTF achievements, either personal or collectively, as pa
   <li>🏴 5th place @ <a href="https://ctftime.org/event/1604" target="_blank" rel="noopener noreferrer">SHELLCTF 2022</a></li>
   <li>🏴 9th place @ <a href="https://ctftime.org/event/1672" target="_blank" rel="noopener noreferrer">TyphoonCon CTF 2022</a></li>
   <li>🥈 2nd place @ <a href="https://ctftime.org/event/1627" target="_blank" rel="noopener noreferrer">HSCTF 9</a></li>
+  <li>Invited @ <a href="https://x.com/fbsecurity/status/1468285730627547140" target="_blank" rel="noopener noreferrer">Meta x Google BountyConEDU 2022</a> in 🇪🇸</li>
   <li>🏴 6th place @ <a href="https://ctftime.org/event/1568" target="_blank" rel="noopener noreferrer">CrewCTF 2022</a></li>
   <li>🏴 5th place @ <a href="https://ctftime.org/event/1617" target="_blank" rel="noopener noreferrer">Securinets CTF Quals 2022 </a></li>
   <li>🥇 1st place @ <a href="about:blank" target="_blank" rel="noopener noreferrer">Team Greece Qualifiers 2022</a></li>
@@ -136,8 +138,10 @@ A collection of various CTF achievements, either personal or collectively, as pa
 {{< timelineItem icon="flag-solid" header="2019" badge="" subheader="" >}}
 <ul>
   <li>🇬🇷 Team Greece member @ <a href="https://ecsc.eu/past-editions/2019" target="_blank" rel="noopener noreferrer">European Cybersecurity Challenge</a> in 🇷🇴</li>
+  <li>🥇 1st place @ <a href="about:blank" target="_blank" rel="noopener noreferrer">HTB x UNI CTF Quals 2019</a></li>
   <li>🏴 9th place @ <a href="https://ctftime.org/event/732" target="_blank" rel="noopener noreferrer">ASIS CTF Quals 2019</a></li>
   <li>🥇 1st place @ <a href="about:blank" target="_blank" rel="noopener noreferrer">Team Greece Qualifiers 2019</a></li>
+  <li>🥇 1st place @ <a href="about:blank" target="_blank" rel="noopener noreferrer">Deloitte Hacking Challenge 2019</a></li>
 </ul>
 {{< /timelineItem >}}
 
