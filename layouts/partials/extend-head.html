@@ -23,4 +23,16 @@
         "/achievements/": "achievements_css"
     }
     path_to_id[location.pathname] && (document.getElementById(path_to_id[location.pathname]).disabled = false);
+
+    // very hacky way of removing the scroll listeners by the theme author...
+    const og_event_adder = window.addEventListener;
+    window.addEventListener = (type, listener, options) => {
+        if (type === "scroll") {
+            const line_2 = listener.toString().split("\n")[1]?.trimStart().startsWith("var");
+            if (line_2 === true) {
+                return;
+            }
+        }
+        og_event_adder.apply(this, [type, listener, options]);
+    }
 </script>
