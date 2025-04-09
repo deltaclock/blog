@@ -17,6 +17,8 @@
 <link id="achievements_css" rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" disabled>
 {{ end }}
 <script>
+    // UNTIL this issue resolves, we are stuck with that :(
+    // https://github.com/nunocoracao/blowfish/issues/1781
     const path_to_id = {
         "/": "home_css",
         "/about/": "about_css",

@@ -2,7 +2,7 @@
 date = "2025-04-05T22:08:35+03:00"
 draft = false
 title = "Achievements"
-description = "REPLACE"
+description = "Achievements"
 showEdit = false
 sharingLinks = false
 showAuthor = false
@@ -23,17 +23,38 @@ showPagination = false
 A collection of various CTF achievements, either personal or collectively, as part of my amazing teams. :black_flag:
 {{< /lead >}}
 
+{{< timeline >}}
+{{< timelineItem icon="star" header="Milestones" badge="" subheader="" >}}
+<ul>
+  <li>🏆 1st place with Team Europe 🇪🇺 @ <a href="https://icc.ecsc.eu/" target="_blank" rel="noopener noreferrer">International Cybersecurity Challenge</a> in 🇨🇱</li>
+  <li>🏆 1st place with Team Europe 🇪🇺 @ <a href="https://icc.ecsc.eu/past-editions/2023" target="_blank" rel="noopener noreferrer">International Cybersecurity Challenge</a> in 🇺🇸</li>
+  <li>🏆 1st place @ <a href="https://icc.ecsc.eu/" target="_blank" rel="noopener noreferrer">HackTM CTF Finals 2023</a> in 🇷🇴</li>
+  <li>🥇 1st place @ <a href="https://teameurope.site/" target="_blank" rel="noopener noreferrer">Team Europe Qualifiers 2023</a></li>
+  <li>🥇 1st place @ <a href="https://ctf.hackthebox.com/event/details/htb-x-ecsc-2023-greek-qualifiers-seniors-947" target="_blank" rel="noopener noreferrer">Team Greece Qualifiers 2023</a></li>
+  <li>🥇 1st place @ <a href="about:blank" target="_blank" rel="noopener noreferrer">Team Greece Qualifiers 2022</a></li>
+  <li>🥇 1st place @ <a href="https://github.com/CyberSecurity-Challenge-Greece/write-ups/blob/48ac3a64be7378eed3d490bd6e5a8a0d31cc6cfb/README.md" target="_blank" rel="noopener noreferrer">Cyber Security Challenge Greece 2024</a> by NVISO</li>
+  <li>🥈 2nd place @ <a href="https://ctftime.org/event/2502" target="_blank" rel="noopener noreferrer">LakeCTF Quals 24-25</a></li>
+  <li>🥈 2nd place @ <a href="https://ctftime.org/event/1924" target="_blank" rel="noopener noreferrer">PwnMe Qualifications</a></li>
+  <li>🥉 3rd place @ <a href="https://ctftime.org/event/2296" target="_blank" rel="noopener noreferrer">Google Capture The Flag 2024</a></li>
+  <li>🥉 3rd place @ <a href="https://ctftime.org/event/2617" target="_blank" rel="noopener noreferrer">DiceCTF 2025 Quals</a></li>
+  <li>🏁 5th place @ <a href="https://capturetheflag.withgoogle.com/hackceler8" target="_blank" rel="noopener noreferrer">Google CTF Finals (Hackceler8)</a> in 🇯🇵</li>
+  <li>🇪🇺 6th place @ <a href="https://teameurope.site/" target="_blank" rel="noopener noreferrer">Team Europe Qualifiers 2024</a></li>
+</ul>
+{{< /timelineItem >}}
+{{< /timeline >}}
+
+<hr/>
 
 {{< timeline >}}
 
-{{< timelineItem icon="flag-solid" header="2025" badge="" subheader="" >}}
+{{< timelineItem icon="flag-solid" header="2025" badge="⬇" subheader="" >}}
 <ul>
   <li>🥉 3rd place @ <a href="https://ctftime.org/event/2617" target="_blank" rel="noopener noreferrer">DiceCTF 2025 Quals</a></li>
   <li>🏴 7th place @ <a href="https://ctftime.org/event/2725" target="_blank" rel="noopener noreferrer">m0leCon CTF 2025 Finals</a> in 🇮🇹</li>
 </ul>
 {{< /timelineItem >}}
 
-{{< timelineItem icon="flag-solid" header="2024" badge="" subheader="" >}}
+{{< timelineItem icon="flag-solid" header="2024" badge="⬇" subheader="" >}}
 <ul>
   <li>🥈 2nd place @ <a href="https://ctftime.org/event/2502" target="_blank" rel="noopener noreferrer">LakeCTF Quals 24-25</a></li>
   <li>🏆 1st place with Team Europe 🇪🇺 @ <a href="https://icc.ecsc.eu/" target="_blank" rel="noopener noreferrer">International Cybersecurity Challenge</a> in 🇨🇱</li>
@@ -50,7 +71,7 @@ A collection of various CTF achievements, either personal or collectively, as pa
 </ul>
 {{< /timelineItem >}}
 
-{{< timelineItem icon="flag-solid" header="2023" badge="" subheader="" >}}
+{{< timelineItem icon="flag-solid" header="2023" badge="⬇" subheader="" >}}
 <ul>
   <li>🚩 1st place with team Zer0Tolerance @ <a href="https://ctftime.org/stats/2023/GR" target="_blank" rel="noopener noreferrer">Greece's CTFtime leaderboard</a></li>
   <li>🥉 3rd place @ <a href="https://ctftime.org/event/2207" target="_blank" rel="noopener noreferrer">niteCTF</a></li>
@@ -76,7 +97,7 @@ A collection of various CTF achievements, either personal or collectively, as pa
 </ul>
 {{< /timelineItem >}}
 
-{{< timelineItem icon="flag-solid" header="2022" badge="" subheader="" >}}
+{{< timelineItem icon="flag-solid" header="2022" badge="⬇" subheader="" >}}
 <ul>
   <li>🚩 1st place with team Zer0Tolerance @ <a href="https://ctftime.org/stats/2022/GR" target="_blank" rel="noopener noreferrer">Greece's CTFtime leaderboard</a></li>
   <li>🏴 4th place @ <a href="https://ctftime.org/event/1758" target="_blank" rel="noopener noreferrer">niteCTF</a></li>
@@ -101,7 +122,7 @@ A collection of various CTF achievements, either personal or collectively, as pa
 </ul>
 {{< /timelineItem >}}
 
-{{< timelineItem icon="flag-solid" header="2021" badge="" subheader="" >}}
+{{< timelineItem icon="flag-solid" header="2021" badge="⬇" subheader="" >}}
 <ul>
   <li>🚩 1st place with team greunion @ <a href="https://ctftime.org/stats/2021/GR" target="_blank" rel="noopener noreferrer">Greece's CTFtime leaderboard</a></li>
   <li>🥉 3rd place @ <a href="https://ctftime.org/event/1476" target="_blank" rel="noopener noreferrer">MetaCTF CyberGames 2021</a></li>
@@ -122,7 +143,7 @@ A collection of various CTF achievements, either personal or collectively, as pa
 </ul>
 {{< /timelineItem >}}
 
-{{< timelineItem icon="flag-solid" header="2020" badge="" subheader="" >}}
+{{< timelineItem icon="flag-solid" header="2020" badge="⬇" subheader="" >}}
 <ul>
   <li>🚩 1st place with team greunion @ <a href="https://ctftime.org/stats/2020/GR" target="_blank" rel="noopener noreferrer">Greece's CTFtime leaderboard</a></li>
   <li>🏴 6th place @ <a href="https://ctftime.org/event/1131" target="_blank" rel="noopener noreferrer">Reply Cyber Security Challenge 2020</a></li>
@@ -135,7 +156,7 @@ A collection of various CTF achievements, either personal or collectively, as pa
 </ul>
 {{< /timelineItem >}}
 
-{{< timelineItem icon="flag-solid" header="2019" badge="" subheader="" >}}
+{{< timelineItem icon="flag-solid" header="2019" badge="⬇" subheader="" >}}
 <ul>
   <li>🇬🇷 Team Greece member @ <a href="https://ecsc.eu/past-editions/2019" target="_blank" rel="noopener noreferrer">European Cybersecurity Challenge</a> in 🇷🇴</li>
   <li>🥇 1st place @ <a href="about:blank" target="_blank" rel="noopener noreferrer">HTB x UNI CTF Quals 2019</a></li>
@@ -145,7 +166,7 @@ A collection of various CTF achievements, either personal or collectively, as pa
 </ul>
 {{< /timelineItem >}}
 
-{{< timelineItem icon="flag-solid" header="2018" badge="" subheader="" >}}
+{{< timelineItem icon="flag-solid" header="2018" badge="⬇" subheader="" >}}
 <ul>
   <li>🚩 29th place with team greunion @ <a href="https://ctftime.org/stats/2018/GR" target="_blank" rel="noopener noreferrer">Worldwide CTFtime leaderboard</a></li>
   <li>🇬🇷 Team Greece member @ <a href="https://ecsc.eu/past-editions/2018" target="_blank" rel="noopener noreferrer">European Cybersecurity Challenge</a> in 🇬🇧</li>

@@ -2,6 +2,14 @@
     opacity: 0.90;
 }
 
+div:has(div > h3)>div.mb-6 {
+    display: none;
+}
+
+div:has(div > h3) {
+    padding-bottom: 0%;
+}
+
 li>div>div:last-child {
     --tw-shadow-color: rgb(0 0 0 / 0.95);
 }

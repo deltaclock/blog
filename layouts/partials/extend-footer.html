@@ -47,4 +47,32 @@
         BLUR_DIV.style.opacity = Math.min(1, Math.max(BG_DEFAULT_OPACITY, BG_DEFAULT_OPACITY + (scroll / 1000)));
         MENU.style.opacity = Math.min(1, Math.max(MN_DEFAULT_OPACITY, MN_DEFAULT_OPACITY + (scroll / 300)));
     }, { capture: true });
+
+    // only for achievements page
+    function toggle_achievement(event) {
+        const span = event.target;
+        window.lol = span;
+        console.log("span", span);
+        const data_div = span.closest("div:has(div > h3)").querySelector("div.mb-6");
+
+        const current_display = data_div.style.getPropertyValue("display");
+        if (current_display === "") {
+            data_div.style.setProperty("display", "revert");
+            span.innerText = "⬆";
+            span.setAttribute("title", "collapse");
+        } else {
+            data_div.style.removeProperty("display");
+            span.innerText = "⬇";
+            span.setAttribute("title", "expand");
+        }
+    }
+
+    if (!document.getElementById("achievements_css").disabled) {
+        for (const span of document.querySelectorAll("h3 > span")) {
+            span.addEventListener("click", toggle_achievement);
+            span.setAttribute("title", "expand");
+        }
+        // doesnt look well here
+        document.getElementById("top-scroller").remove();
+    }
 </script>
