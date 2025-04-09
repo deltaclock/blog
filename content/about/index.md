@@ -20,9 +20,9 @@ showPagination = false
 
 ***
 
-Hello! My name is **Nikolaos Mourousias**, and I work as a Security Researcher. I have extensive knowledge and experience in **Web** and **Mobile** security. Frequently, I also rely on my reverse engineering or binary exploitation skills to achieve my objectives.
+Hello! I'm **Nikolaos Mourousias**, a Security Researcher with extensive specialization in **Web** and **Mobile** security. I often leverage my skills in reverse engineering and binary exploitation techniques to delve deeper into more complex security vulnerabilities.
 
-The goal of this blog is to share knowledge on rarely explored topics and provide up-to-date insights into past techniques. Moreover, it serves as a repository for all my published security research, advisories on various systems or CTF write-ups.
+This blog is my space to explore niche security topics, revisit foundational techniques with a modern lens, and share my findings. You'll also find a collection of my published research, security advisories, and CTF write-ups here.
 
 In my free time, I enjoy tinkering with anything IT-related and, of course, playing CTFs with my team, [Zer0Tolerance](https://x.com/0tolerance_ctf).
 
